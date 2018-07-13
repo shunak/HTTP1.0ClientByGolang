@@ -13,8 +13,8 @@ func main() {
 	if err != nil { // Go言語のエラー処理コード　例外処理はない
 		panic(err)
 	}
-	defer resp.Body.Close() // 後処理コードdeferを付与すると、この関数から抜けたあとにこの文を実行する
-	body, err := ioutil.ReadAll(resp.Body)
+	defer resp.Body.Close()                // 後処理コードdeferを付与すると、この関数から抜けたあとにこの文を実行する
+	body, err := ioutil.ReadAll(resp.Body) //bodyの内容をバイト列として読み込む
 	if err != nil {
 		panic(err)
 	}
