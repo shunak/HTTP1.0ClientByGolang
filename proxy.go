@@ -10,13 +10,13 @@ import (
 )
 
 func main() {
-	proxyUrl, err := url.Parse("http://localhost:18888")
+	proxyURL, err := url.Parse("http://localhost:18888")
 	if err != nil {
 		panic(err)
 	}
 	client := http.Client{
 		Transport: &http.Transport{
-			Proxy: http.ProxyURL(proxyUrl),
+			Proxy: http.ProxyURL(proxyURL),
 		},
 	}
 	resp, err := client.Get("http://github.com")
